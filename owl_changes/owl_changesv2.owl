@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://ontoview.org/changes/2/1#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://ontoview.org/changes/2/1">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Add_Restriction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Addition"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Restriction_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Unset_Functionality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Increase_Higherbound">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Higherbound"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Indivual_Type_To_Subclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Indivual_Type"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Label">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Label_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cardinality_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Restriction_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Equivalent_Property">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Property_Equivalence_Change"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Addition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Higherbound">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Higherbound_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Disjoint_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Removal"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Class_Disjointness_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Set_InverseFunctionality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Unset_InverseFunctionality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AnnotationProperty_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Entity_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Disjoint_Class_To_Superclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Disjoint_Class"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Superclass_To_Subclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Superclass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Superclass_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Class_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Set_Symmetry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Extend_Range">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Range"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Comment_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Resource_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Restriction_Filler_To_Subclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Restriction_Filler"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Resource_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Entity_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Restrict_Cardinality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Cardinality_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Superclass_To_Superclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modify_Superclass"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Inverse_Property">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Property_Inverse_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Property_To_Superproperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Equivalent_Property"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Ontology_Removal"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Disjoint_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Class_Disjointness_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Equivalent_Property">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Equivalence_Change"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Individual_Equivalence_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Individual_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Unset_Transtivity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Individual">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Ontology_Removal"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Restriction_Filler_To_Superclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modify_Restriction_Filler"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Lowerbound_Change">
+    <rdfs:subClassOf rdf:resource="#Cardinality_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Ontology_Removal">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Ontology_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Ontology_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Entity_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Range">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Range_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Inverse_Property_To_Superproperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Inverse_Property"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Property">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Ontology_Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Comment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Comment_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Equivalent_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Removal"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Class_Equivalence_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Equivalent_Class">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Class_Equivalence_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Class_Disjointness_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Class_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Superclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Removal"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Superclass_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Extend_Domain">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Domain"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Increase_Lowerbound">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Modify_Lowerbound"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Class_Equivalence_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Label">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Label_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Class">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Ontology_Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Inverse_Property">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Inverse_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Class_To_Subclass">
+    <rdfs:subClassOf rdf:resource="#Modify_Equivalent_Class"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Set_Transtivity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Property_Equivalence_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Property_Inverse_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Higherbound">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Higherbound_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Removal">
+    <rdfs:subClassOf rdf:resource="#Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Indivual_Type_To_Superclass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modify_Indivual_Type"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Label_Change">
+    <rdfs:subClassOf rdf:resource="#Resource_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Restrict_Domain">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modify_Domain"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Indivual_Type">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Individual_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Class_Equivalence_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Class_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Decrease_Higherbound">
+    <rdfs:subClassOf rdf:resource="#Modify_Higherbound"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Restriction_Filler">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Restriction_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Class_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Entity_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Domain_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Change_To_DatatypeProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Domain">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Domain_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Entity_Change">
+    <rdfs:subClassOf rdf:resource="#Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Property_Type_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Unset_Symmetry">
+    <rdfs:subClassOf rdf:resource="#Property_Type_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Comment">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Comment_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Change_To_ObjectProperty">
+    <rdfs:subClassOf rdf:resource="#Property_Type_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Composite_Change">
+    <rdfs:subClassOf rdf:resource="#Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Change_To_Existential_Restriction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Restriction_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Domain">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Domain_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Superproperty">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Superproperty_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Range">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Range_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Superproperty">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Superproperty_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Lowerbound">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Lowerbound_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Inverse_Property">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Property_Inverse_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Superproperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Superproperty_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Individual">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Ontology_Addition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Class_To_Superclass">
+    <rdfs:subClassOf rdf:resource="#Modify_Equivalent_Class"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Higherbound">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Higherbound_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Equivalent_Individual">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Individual_Equivalence_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Restrict_Range">
+    <rdfs:subClassOf rdf:resource="#Modify_Range"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Restriction_Change">
+    <rdfs:subClassOf rdf:resource="#Class_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Lowerbound">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Lowerbound_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Equivalent_Property">
+    <rdfs:subClassOf rdf:resource="#Property_Equivalence_Change"/>
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Extend_Cardinality">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Modification"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#Cardinality_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Lowerbound">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Lowerbound_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Disjoint_Class_To_Subclass">
+    <rdfs:subClassOf rdf:resource="#Modify_Disjoint_Class"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Utility_Classes"/>
+  <owl:Class rdf:ID="Change_To_Universal_Restriction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Restriction_Type_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Superclass">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Superclass_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modification">
+    <rdfs:subClassOf rdf:resource="#Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Superclass">
+    <rdfs:subClassOf rdf:resource="#Modification"/>
+    <rdfs:subClassOf rdf:resource="#Superclass_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Superproperty_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Superproperty_To_Superproperty">
+    <rdfs:subClassOf rdf:resource="#Modify_Superproperty"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Label">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Label_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Comment">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Comment_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Property_To_Subproperty">
+    <rdfs:subClassOf rdf:resource="#Modify_Equivalent_Property"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Role">
+    <rdfs:subClassOf rdf:resource="#Utility_Classes"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Superproperty_To_Subproperty">
+    <rdfs:subClassOf rdf:resource="#Modify_Superproperty"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Higherbound_Change">
+    <rdfs:subClassOf rdf:resource="#Cardinality_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Property">
+    <rdfs:subClassOf rdf:resource="#Ontology_Removal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Range">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Range_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Restriction_Type_Change">
+    <rdfs:subClassOf rdf:resource="#Modification"/>
+    <rdfs:subClassOf rdf:resource="#Restriction_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Inverse_Property_To_Subproperty">
+    <rdfs:subClassOf rdf:resource="#Modify_Inverse_Property"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Set_Functionality">
+    <rdfs:subClassOf rdf:resource="#Property_Type_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Ontology_Addition">
+    <rdfs:subClassOf rdf:resource="#Ontology_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Modify_Domain">
+    <rdfs:subClassOf rdf:resource="#Modification"/>
+    <rdfs:subClassOf rdf:resource="#Domain_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Range_Change">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Property_Change"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Restriction">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Restriction_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Decrease_Lowerbound">
+    <rdfs:subClassOf rdf:resource="#Modify_Lowerbound"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Individual_Change">
+    <rdfs:subClassOf rdf:resource="#Entity_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Remove_Equivalent_Individual">
+    <rdfs:subClassOf rdf:resource="#Removal"/>
+    <rdfs:subClassOf rdf:resource="#Individual_Equivalence_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Modify_Equivalent_Individual">
+    <rdfs:subClassOf rdf:resource="#Modification"/>
+    <rdfs:subClassOf rdf:resource="#Individual_Equivalence_Change"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Add_Disjoint_Class">
+    <rdfs:subClassOf rdf:resource="#Addition"/>
+    <rdfs:subClassOf rdf:resource="#Class_Disjointness_Change"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Property_Change">
+    <rdfs:subClassOf rdf:resource="#Entity_Change"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="to">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Class_Change"/>
+          <owl:Class rdf:about="#Ontology_Addition"/>
+          <owl:Class rdf:about="#Individual_Change"/>
+          <owl:Class rdf:about="#Property_Change"/>
+          <owl:Class rdf:about="#Resource_Change"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="from">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Class_Change"/>
+          <owl:Class rdf:about="#Ontology_Removal"/>
+          <owl:Class rdf:about="#Individual_Change"/>
+          <owl:Class rdf:about="#Property_Change"/>
+          <owl:Class rdf:about="#Resource_Change"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="on_Property">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Restriction_Change"/>
+          <owl:Class rdf:about="#AnnotationProperty_Change"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="new_Filler">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Modification"/>
+          <owl:Class rdf:about="#Addition"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="old_Filler">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Modification"/>
+          <owl:Class rdf:about="#Removal"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="new_Value">
+    <rdfs:domain rdf:resource="#Cardinality_Change"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="old_Value">
+    <rdfs:domain rdf:resource="#Cardinality_Change"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.2.1, Build 365)  http://protege.stanford.edu -->

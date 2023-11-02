@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:owlodm="http://owlodm.ontoware.org/OWL1.1#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:changes="http://omv.ontoware.org/2007/10/changes#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://omv.ontoware.org/2007/07/OWLChanges#"
+    xmlns:j.0="http://omv.ontoware.org/2005/05/ontology#"
+  xml:base="http://omv.ontoware.org/2007/07/OWLChanges">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://omv.ontoware.org/2007/10/changes"/>
+    <owl:imports rdf:resource="http://owlodm.ontoware.org/OWL1.1"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="RemoveInverseProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PropertyInverseChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AddDisjointClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassDisjointnessChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PropertyEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#PropertyChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentProperty">
+    <rdfs:subClassOf rdf:resource="#PropertyEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentIndividual">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="IndividualEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#IndividualEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#IndividualChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ClassEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveDisjointClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ClassDisjointnessChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassDisjointnessChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#ClassChange"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#ClassChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddInverseProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyInverseChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentProperty">
+    <rdfs:subClassOf rdf:resource="#PropertyEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentIndividual">
+    <rdfs:subClassOf rdf:resource="#IndividualEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PropertyInverseChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#PropertyChange"/>
+  </owl:Class>
+  <rdf:Description rdf:about="http://omv.ontoware.org/2007/10/changes#relatedEntity">
+    <rdfs:range rdf:resource="http://owlodm.ontoware.org/OWL1.1#OWLEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://omv.ontoware.org/2007/10/changes#appliedAxiom">
+    <rdfs:range rdf:resource="http://owlodm.ontoware.org/OWL1.1#OWLAxiom"/>
+  </rdf:Description>
+  <changes:AddClass rdf:ID="addClass001">
+    <changes:hasAuthor>
+      <j.0:Person rdf:ID="RaulPalma">
+        <j.0:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Palma</j.0:lastName>
+        <j.0:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Raul</j.0:firstName>
+        <j.0:eMail rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >rpalma@fi.upm.es</j.0:eMail>
+      </j.0:Person>
+    </changes:hasAuthor>
+    <changes:relatedEntity>
+      <owlodm:OWLClass rdf:ID="class001"/>
+    </changes:relatedEntity>
+    <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+    >02:46:00</changes:time>
+    <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+    >2007-12-11</changes:date>
+  </changes:AddClass>
+  <j.0:Person rdf:ID="PeterHaase">
+    <j.0:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Haase</j.0:lastName>
+    <j.0:eMail rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pha@aifb.karlsruhe.de</j.0:eMail>
+    <j.0:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Peter</j.0:firstName>
+  </j.0:Person>
+  <j.0:Ontology rdf:ID="XOntology_v2">
+    <j.0:resourceLocator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://omv.ontoware.org/XOntology_v2.owl</j.0:resourceLocator>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OntologyX</j.0:name>
+    <j.0:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://omv.ontoware.org/XOntology</j.0:URI>
+    <j.0:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.0.0</j.0:version>
+  </j.0:Ontology>
+  <j.0:Ontology rdf:ID="XOntology_v1">
+    <j.0:resourceLocator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://omv.ontoware.org/XOntology_v1.owl</j.0:resourceLocator>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >OntologyX</j.0:name>
+    <j.0:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://omv.ontoware.org/XOntology</j.0:URI>
+    <j.0:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0</j.0:version>
+  </j.0:Ontology>
+  <owlodm:OWLClass rdf:ID="class002"/>
+  <changes:ChangeSpecification rdf:ID="ChangeSpecification001">
+    <changes:fromVersion rdf:resource="#XOntology_v1"/>
+    <changes:hasChange>
+      <changes:SplitClass rdf:ID="splitClass001">
+        <changes:hasAuthor rdf:resource="#PeterHaase"/>
+        <changes:consistsOf>
+          <changes:AddClass rdf:ID="addClass003">
+            <changes:relatedEntity>
+              <owlodm:OWLClass rdf:ID="class004"/>
+            </changes:relatedEntity>
+            <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+            >2007-12-11</changes:date>
+            <changes:hasAuthor rdf:resource="#PeterHaase"/>
+            <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+            >03:01:13</changes:time>
+            <changes:hasPreviousChange>
+              <changes:AddClass rdf:ID="addClass002">
+                <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+                >03:00:27</changes:time>
+                <changes:hasAuthor rdf:resource="#PeterHaase"/>
+                <changes:hasPreviousChange>
+                  <changes:RemoveClass rdf:ID="removeClass001">
+                    <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+                    >03:00:06</changes:time>
+                    <changes:hasAuthor rdf:resource="#PeterHaase"/>
+                    <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+                    >2007-12-11</changes:date>
+                    <changes:relatedEntity rdf:resource="#class002"/>
+                  </changes:RemoveClass>
+                </changes:hasPreviousChange>
+                <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+                >2007-12-11</changes:date>
+                <changes:relatedEntity>
+                  <owlodm:OWLClass rdf:ID="class003"/>
+                </changes:relatedEntity>
+              </changes:AddClass>
+            </changes:hasPreviousChange>
+          </changes:AddClass>
+        </changes:consistsOf>
+        <changes:consistsOf rdf:resource="#addClass002"/>
+        <changes:consistsOf rdf:resource="#removeClass001"/>
+        <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2007-12-11</changes:date>
+        <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+        >03:02:32</changes:time>
+      </changes:SplitClass>
+    </changes:hasChange>
+    <changes:hasChange>
+      <changes:AddDomain rdf:ID="addDomain001">
+        <changes:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2007-12-11</changes:date>
+        <changes:time rdf:datatype="http://www.w3.org/2001/XMLSchema#time"
+        >02:54:13</changes:time>
+        <changes:relatedEntity rdf:resource="#class001"/>
+        <changes:hasAuthor>
+          <j.0:Person rdf:ID="YiminWang">
+            <j.0:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Yimin</j.0:firstName>
+            <j.0:eMail rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ywa@aifb.karlsruhe.de</j.0:eMail>
+            <j.0:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Wang</j.0:lastName>
+          </j.0:Person>
+        </changes:hasAuthor>
+      </changes:AddDomain>
+    </changes:hasChange>
+    <changes:hasChange rdf:resource="#addClass001"/>
+    <changes:toVersion rdf:resource="#XOntology_v2"/>
+  </changes:ChangeSpecification>
+  <j.0:Person rdf:ID="OscarCorcho">
+    <j.0:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Oscar</j.0:firstName>
+    <j.0:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Corcho</j.0:lastName>
+    <j.0:eMail rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ocorcho@fi.upm.es</j.0:eMail>
+  </j.0:Person>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

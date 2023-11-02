@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Mappings"
+    nsURI="http:///Mappings.ecore" nsPrefix="Mappings">
+  <eClassifiers xsi:type="ecore:EClass" name="Mapping">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainAssumption" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="{overlap, soundContainment, completeContainment, equivalence}"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inconsistencyPropagation"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueNameAssumption" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementMapping" ordered="false"
+        upperBound="-1" eType="#//MappingAssertion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceOntology" ordered="false"
+        lowerBound="1" eType="ecore:EClass file:/C://owl.ecore#//Ontology"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetOntology" ordered="false"
+        lowerBound="1" eType="ecore:EClass file:/C://owl.ecore#//Ontology"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mappingURI" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingAssertion">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="self.sourceElement.oclIsTypeOf(OWLClass) implies self.targetElement.oclIsTypeOf(OWLClass) and&#xD;&#xA;self.sourceElement.oclIsTypeOf(ObjectProperty) implies self.targetElement.oclIsTypeOf(ObjectProperty) and&#xD;&#xA;self.sourceElement.oclIsTypeOf(Individual) implies self.targetElement.oclIsTypeOf(Individual)"/>
+    </eAnnotations>
+    <eOperations name="Whenbothmappableelementsarequeriesthenavariablewhichisdefinedasdistinguishedvariableinthesourcemappableelementmustbedefinedasdistinguishedvariableinthetargetmappableelementaswell"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.sourceElement.oclIsTypeOf(OntologyQuery) and &#xD;&#xA;self.targetElement.oclIsTypeOf(OntologyQuery) implies&#xD;&#xA;self.sourceElement.oclAsType(OntologyQuery)->distinguishedVariable->forAll(v: Variable| self.targetElement.oclAsType(OntologyQuery)->distinguishedVariable->exists(v))"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationType" ordered="false"
+        lowerBound="1" eType="#//SemanticRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElement" ordered="false"
+        lowerBound="1" eType="#//MappableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetElement" ordered="false"
+        lowerBound="1" eType="#//MappableElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticRelation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negated" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interpretation" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="{intensional, extensional}"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappableElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Equivalence" eSuperTypes="#//SemanticRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Containment" eSuperTypes="#//SemanticRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="{sound, complete}"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Overlap" eSuperTypes="#//SemanticRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OntologyQuery" eSuperTypes="#//MappableElement">
+    <eOperations name="Avariablecanonlybeadistinguishedvariableofaqueryifitisatermofoneoftheatomsofthequery"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.distinguishedVariable->forAll(v: Variable | self.queryAtom->exists(a: Atom) | a.atomArgument -> exists(v))"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queryAtom" ordered="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass file:/C://swrl.ecore#//Atom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="distinguishedVariable"
+        ordered="false" upperBound="-1" eType="ecore:EClass file:/C://swrl.ecore#//Variable"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:owlodm="http://owlodm.ontoware.org/OWL1.1#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:changes="http://omv.ontoware.org/2007/10/changes#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://omv.ontoware.org/2007/07/OWLChanges#"
+  xml:base="http://omv.ontoware.org/2007/07/OWLChanges">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://omv.ontoware.org/2007/10/changes"/>
+    <owl:imports rdf:resource="http://owlodm.ontoware.org/OWL1.1"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="RemoveInverseProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PropertyInverseChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AddDisjointClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassDisjointnessChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PropertyEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#PropertyChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentProperty">
+    <rdfs:subClassOf rdf:resource="#PropertyEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentIndividual">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="IndividualEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AddEquivalentClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ClassEquivalenceChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#IndividualEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#IndividualChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveDisjointClass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ClassDisjointnessChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassEquivalenceChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#ClassChange"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassDisjointnessChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#ClassChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddInverseProperty">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#PropertyInverseChange"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentProperty">
+    <rdfs:subClassOf rdf:resource="#PropertyEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveEquivalentIndividual">
+    <rdfs:subClassOf rdf:resource="#IndividualEquivalenceChange"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PropertyInverseChange">
+    <rdfs:subClassOf rdf:resource="http://omv.ontoware.org/2007/10/changes#PropertyChange"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="appliedAxiom">
+    <rdfs:range rdf:resource="http://owlodm.ontoware.org/OWL1.1#Axiom"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relatedEntity">
+    <rdfs:range rdf:resource="http://owlodm.ontoware.org/OWL1.1#OWLEntity"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://omv.ontoware.org/2007/10/atomicChanges">
+  <rdfs:Class rdf:about="http://omv.ontoware.org/2007/07/OWLChanges#IndividualChange"/>
+  <rdfs:Class rdf:about="http://omv.ontoware.org/2007/07/OWLChanges#PropertyChange"/>
+  <rdfs:Class rdf:about="http://omv.ontoware.org/2007/07/OWLChanges#ClassChange"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

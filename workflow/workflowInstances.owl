@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:owlodm="http://owlodm.ontoware.org/OWL1.1#"
+    xmlns="http://omv.ontoware.org/2007/07/workflow#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owlchanges="http://omv.ontoware.org/2007/07/OWLChanges#"
+    xmlns:changes="http://omv.ontoware.org/2007/10/changes#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:omv="http://omv.ontoware.org/2005/05/ontology#"
+  xml:base="http://omv.ontoware.org/2007/07/workflow">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://omv.ontoware.org/2007/07/OWLChanges"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Action">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="performedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Insert">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OntologyAction">
+    <rdfs:subClassOf rdf:resource="#Action"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SendToBeApproved">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RejectToDraft">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Role"/>
+  <owl:Class rdf:ID="SendToApproved">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SendToBeDeleted">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Delete">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="State"/>
+  <owl:Class rdf:ID="RejectToApproved">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EntityState">
+    <rdfs:subClassOf rdf:resource="#State"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RejectToBeApproved">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OntologyState">
+    <rdfs:subClassOf rdf:resource="#State"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Publish">
+    <rdfs:subClassOf rdf:resource="#OntologyAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Update">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EntityAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#EntityAction">
+    <rdfs:subClassOf rdf:resource="#Action"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasState">
+    <rdfs:domain rdf:resource="http://omv.ontoware.org/2007/10/changes#EntityChange"/>
+    <rdfs:range rdf:resource="#EntityState"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="toPublicVersion">
+    <rdfs:domain rdf:resource="#Publish"/>
+    <rdfs:range rdf:resource="http://omv.ontoware.org/2005/05/ontology#Ontology"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOntologyState">
+    <rdfs:range rdf:resource="#OntologyState"/>
+    <rdfs:domain rdf:resource="http://omv.ontoware.org/2005/05/ontology#Ontology"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRole">
+    <rdfs:range rdf:resource="#Role"/>
+    <rdfs:domain rdf:resource="http://omv.ontoware.org/2005/05/ontology#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fromPublicVersion">
+    <rdfs:range rdf:resource="http://omv.ontoware.org/2005/05/ontology#Ontology"/>
+    <rdfs:domain rdf:resource="#Publish"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#performedBy">
+    <rdfs:domain rdf:resource="#Action"/>
+    <rdfs:range rdf:resource="http://omv.ontoware.org/2005/05/ontology#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="relatedChange">
+    <rdfs:domain rdf:resource="#EntityAction"/>
+    <rdfs:range rdf:resource="http://omv.ontoware.org/2007/10/changes#EntityChange"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="timestamp">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Action"/>
+  </owl:DatatypeProperty>
+  <owlodm:OWLClass rdf:ID="class1"/>
+  <omv:Ontology rdf:ID="ontologyFAO_v2">
+    <omv:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ontologyFAO</omv:name>
+    <hasOntologyState>
+      <OntologyState rdf:ID="ApprovedOntology"/>
+    </hasOntologyState>
+    <omv:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2.0</omv:version>
+    <omv:resourceLocator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://fao.org/ontologyFAO_v2.owl</omv:resourceLocator>
+    <omv:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://fao.org/ontologyFAO</omv:URI>
+  </omv:Ontology>
+  <SendToApproved rdf:ID="MyApprove1Peter">
+    <timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1285282019</timestamp>
+    <relatedChange>
+      <changes:EntityChange rdf:ID="Change1Raul">
+        <owlchanges:hasAuthor>
+          <omv:Person rdf:ID="Raul">
+            <omv:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Palma</omv:lastName>
+            <omv:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Raul</omv:firstName>
+            <hasRole>
+              <Role rdf:ID="SubjectExpert"/>
+            </hasRole>
+          </omv:Person>
+        </owlchanges:hasAuthor>
+        <hasState>
+          <EntityState rdf:ID="Approved"/>
+        </hasState>
+      </changes:EntityChange>
+    </relatedChange>
+    <performedBy>
+      <omv:Person rdf:ID="Peter">
+        <hasRole>
+          <Role rdf:ID="Validator"/>
+        </hasRole>
+        <omv:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Peter</omv:firstName>
+        <omv:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Haase</omv:lastName>
+      </omv:Person>
+    </performedBy>
+  </SendToApproved>
+  <Insert rdf:ID="MyAction1Boris">
+    <timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1185277951</timestamp>
+    <relatedChange>
+      <changes:EntityChange rdf:ID="Change1Boris">
+        <hasState rdf:resource="#Approved"/>
+        <owlchanges:hasAuthor>
+          <omv:Person rdf:ID="Boris">
+            <omv:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Boris</omv:firstName>
+            <omv:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Villazon</omv:lastName>
+            <hasRole rdf:resource="#SubjectExpert"/>
+          </omv:Person>
+        </owlchanges:hasAuthor>
+      </changes:EntityChange>
+    </relatedChange>
+    <performedBy rdf:resource="#Boris"/>
+  </Insert>
+  <changes:EntityChange rdf:ID="Change2Raul">
+    <hasState rdf:resource="#Approved"/>
+    <owlchanges:hasAuthor rdf:resource="#Raul"/>
+  </changes:EntityChange>
+  <SendToBeDeleted rdf:ID="MyAction2Boris">
+    <performedBy rdf:resource="#Boris"/>
+    <relatedChange>
+      <changes:EntityChange rdf:ID="Change2Boris">
+        <owlchanges:hasAuthor rdf:resource="#Boris"/>
+        <hasState>
+          <EntityState rdf:ID="Deleted"/>
+        </hasState>
+      </changes:EntityChange>
+    </relatedChange>
+  </SendToBeDeleted>
+  <Insert rdf:ID="MyAction2Raul">
+    <performedBy rdf:resource="#Raul"/>
+    <relatedChange rdf:resource="#Change2Raul"/>
+  </Insert>
+  <Insert rdf:ID="insert1">
+    <timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1197373004</timestamp>
+    <relatedChange>
+      <changes:EntityChange rdf:ID="addClass1">
+        <owlchanges:relatedEntity rdf:resource="#class1"/>
+        <hasState rdf:resource="#Approved"/>
+        <owlchanges:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date"
+        >2007-12-12</owlchanges:date>
+        <owlchanges:hasAuthor>
+          <omv:Person rdf:ID="expertFAO">
+            <hasRole rdf:resource="#SubjectExpert"/>
+          </omv:Person>
+        </owlchanges:hasAuthor>
+      </changes:EntityChange>
+    </relatedChange>
+    <performedBy rdf:resource="#expertFAO"/>
+  </Insert>
+  <Role rdf:ID="Viewer"/>
+  <EntityState rdf:ID="Draft"/>
+  <SendToApproved rdf:ID="approve1">
+    <relatedChange rdf:resource="#addClass1"/>
+    <performedBy>
+      <omv:Person rdf:ID="validatorFAO">
+        <hasRole rdf:resource="#Validator"/>
+      </omv:Person>
+    </performedBy>
+  </SendToApproved>
+  <SendToApproved rdf:ID="MyApprove3Asun">
+    <relatedChange rdf:resource="#Change1Boris"/>
+    <performedBy>
+      <omv:Person rdf:ID="Asun">
+        <omv:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gomez-Perez</omv:lastName>
+        <hasRole rdf:resource="#SubjectExpert"/>
+        <omv:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Asuncion</omv:firstName>
+      </omv:Person>
+    </performedBy>
+  </SendToApproved>
+  <changes:ChangeSpecification rdf:ID="changeSpecification1">
+    <owlchanges:hasChange rdf:resource="#addClass1"/>
+    <owlchanges:lastTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1197372944 </owlchanges:lastTimestamp>
+    <owlchanges:fromVersion>
+      <omv:Ontology rdf:ID="ontologyFAO_v1">
+        <omv:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ontologyFAO</omv:name>
+        <omv:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1.0</omv:version>
+        <omv:resourceLocator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://fao.org/ontologyFAO_v1.owl</omv:resourceLocator>
+        <hasOntologyState rdf:resource="#ApprovedOntology"/>
+        <omv:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://fao.org/ontologyFAO</omv:URI>
+      </omv:Ontology>
+    </owlchanges:fromVersion>
+    <owlchanges:toVersion rdf:resource="#ontologyFAO_v2"/>
+    <owlchanges:initialTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1197372764 </owlchanges:initialTimestamp>
+  </changes:ChangeSpecification>
+  <RejectToDraft rdf:ID="MyReject1Asun">
+    <performedBy rdf:resource="#Asun"/>
+    <relatedChange>
+      <changes:EntityChange rdf:ID="Change3Boris">
+        <hasState rdf:resource="#Draft"/>
+        <owlchanges:hasAuthor rdf:resource="#Boris"/>
+      </changes:EntityChange>
+    </relatedChange>
+    <timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1234567891</timestamp>
+  </RejectToDraft>
+  <EntityState rdf:ID="ToBeApproved"/>
+  <EntityState rdf:ID="ToBeDeleted"/>
+  <omv:Person rdf:ID="Elena">
+    <hasRole rdf:resource="#SubjectExpert"/>
+    <omv:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Elena</omv:firstName>
+    <omv:lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Montiel</omv:lastName>
+  </omv:Person>
+  <Delete rdf:ID="MyDelete1Peter">
+    <relatedChange rdf:resource="#Change2Boris"/>
+    <performedBy rdf:resource="#Peter"/>
+  </Delete>
+  <omv:Person rdf:ID="FAOPerson">
+    <hasRole rdf:resource="#Validator"/>
+  </omv:Person>
+  <OntologyState rdf:ID="DraftOntology"/>
+  <SendToBeApproved rdf:ID="MySubmission3Boris">
+    <relatedChange rdf:resource="#Change3Boris"/>
+    <performedBy rdf:resource="#Boris"/>
+  </SendToBeApproved>
+  <OntologyState rdf:ID="PublishedOntology"/>
+  <SendToBeApproved rdf:ID="MySubmission2Raul">
+    <relatedChange rdf:resource="#Change2Raul"/>
+    <performedBy rdf:resource="#Raul"/>
+  </SendToBeApproved>
+  <omv:Ontology rdf:ID="TestOntology110">
+    <omv:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.1.0</omv:version>
+    <omv:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://ontoware.org/private/1/1</omv:URI>
+    <hasOntologyState rdf:resource="#ApprovedOntology"/>
+  </omv:Ontology>
+  <SendToBeApproved rdf:ID="MySubmission1Raul">
+    <relatedChange rdf:resource="#Change1Raul"/>
+    <performedBy rdf:resource="#Raul"/>
+  </SendToBeApproved>
+  <OntologyState rdf:ID="ToBeApprovedOntology"/>
+  <changes:ChangeSpecification rdf:ID="changeSpecification0001">
+    <owlchanges:hasChange rdf:resource="#Change1Raul"/>
+    <owlchanges:toVersion>
+      <omv:Ontology rdf:ID="TestOntology111">
+        <hasOntologyState rdf:resource="#DraftOntology"/>
+        <omv:URI rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://ontoware.org/private/1/1</omv:URI>
+        <omv:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >1.1.1</omv:version>
+      </omv:Ontology>
+    </owlchanges:toVersion>
+    <owlchanges:hasAuthor rdf:resource="#Raul"/>
+    <owlchanges:lastTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1185274421</owlchanges:lastTimestamp>
+    <owlchanges:hasChange rdf:resource="#Change1Boris"/>
+    <owlchanges:hasChange rdf:resource="#Change2Boris"/>
+    <hasState rdf:resource="#Draft"/>
+    <owlchanges:hasChange rdf:resource="#Change3Boris"/>
+    <owlchanges:initialTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1185191621</owlchanges:initialTimestamp>
+    <owlchanges:hasChange rdf:resource="#Change2Raul"/>
+    <owlchanges:fromVersion rdf:resource="#TestOntology110"/>
+  </changes:ChangeSpecification>
+  <Update rdf:ID="MyAction1Raul">
+    <relatedChange rdf:resource="#Change1Raul"/>
+    <performedBy rdf:resource="#Raul"/>
+  </Update>
+  <Update rdf:ID="MyAction3Boris">
+    <relatedChange rdf:resource="#Change3Boris"/>
+    <performedBy rdf:resource="#Boris"/>
+  </Update>
+  <SendToApproved rdf:ID="MyApprove2Peter">
+    <relatedChange rdf:resource="#Change2Raul"/>
+    <performedBy rdf:resource="#Peter"/>
+  </SendToApproved>
+  <SendToBeApproved rdf:ID="MySubmission1Boris">
+    <timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1185280307</timestamp>
+    <performedBy rdf:resource="#Boris"/>
+    <relatedChange rdf:resource="#Change1Boris"/>
+  </SendToBeApproved>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->
